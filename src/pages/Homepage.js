@@ -12,8 +12,12 @@ const Homepage = () => {
   useEffect(() => {
     dispatch(getPostsData(1));
     dispatch(incrementPage());
-    const likedFromLS = localStorage.getItem("likedPosts");
-    dispatch(getLikedPosts(JSON.parse(likedFromLS)));
+    if (localStorage.getItem("likedPosts") === null) {
+      return;
+    } else {
+      const likedFromLS = localStorage.getItem("likedPosts");
+      dispatch(getLikedPosts(JSON.parse(likedFromLS)));
+    }
     return () => {
       dispatch(cleanUp());
     };
