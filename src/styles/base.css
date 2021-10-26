@@ -1,0 +1,39 @@
+@import "./pages/liked-posts.css";
+@import "./pages/admin-create.css";
+@import "./components/posts-card.css";
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+
+.input-edit-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-edit-wrapper input {
+  padding: 1.4rem 1.6rem;
+  width: 50rem;
+  height: 5rem;
+}
+
+.input-edit-wrapper textarea {
+  padding: 1.4rem 1.6rem;
+  width: 50rem;
+  height: 15rem;
+}
+
+.input-edit-wrapper input:first-of-type {
+  margin: 0 0 2rem 0;
+}
+
+*,
+*::after,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 10px;
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+}

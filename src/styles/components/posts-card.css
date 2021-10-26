@@ -1,0 +1,58 @@
+.card-item-wrapper:nth-child(odd) {
+  background-color: #fff;
+}
+
+.card-item-wrapper:nth-child(even) {
+  background-color: #eee;
+}
+
+.card-items-container .card-item-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 25vh;
+  padding: 2.4rem 5.5rem;
+}
+
+.card-items-container .card-item-wrapper .content-wrapper:hover {
+  cursor: pointer;
+}
+
+.card-items-container .card-item-wrapper .content-wrapper .title {
+  color: #000;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.card-items-container .card-item-wrapper .content-wrapper .subtitle {
+  color: rgb(156, 147, 147);
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+
+.card-items-container .card-item-wrapper .love-wrapper {
+  font-size: 3rem;
+  color: rgb(201, 89, 107);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 0 3rem;
+}
+
+.card-items-container .card-item-wrapper .love-wrapper:hover {
+  cursor: pointer;
+}
+
+.isLoading {
+  font-size: 2rem;
+  text-align: center;
+  padding: 2.4rem 3rem;
+}
+
+.reached {
+  font-size: 2rem;
+  text-align: center;
+  padding: 2.4rem 3rem;
+}

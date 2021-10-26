@@ -1,0 +1,61 @@
+.admin-create-wrapper .navbar-wrapper {
+  height: 7rem;
+  color: white;
+  background-color: #106cc8;
+  display: flex;
+  align-items: center;
+  padding: 2.4rem 4rem;
+}
+
+.admin-create-wrapper .navbar-wrapper .title-navbar {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-right: auto;
+}
+
+.admin-create-wrapper .navbar-wrapper .btn-wrapper {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.admin-create-wrapper .navbar-wrapper .btn-wrapper:hover {
+  cursor: pointer;
+}
+
+.admin-create-wrapper .input-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 6rem;
+}
+
+.admin-create-wrapper .input-wrapper input:first-of-type {
+  margin: 5rem 0 3rem 0;
+}
+
+.admin-create-wrapper .input-wrapper input {
+  width: 40rem;
+  height: 4rem;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+
+.admin-create-wrapper .input-wrapper input:focus-visible {
+  outline: none;
+  border-color: #106cc8;
+}
+
+.admin-create-wrapper .input-wrapper .btn-save-wrapper {
+  margin: 3rem 0 0 0;
+}
+
+.admin-create-wrapper .input-wrapper .btn-save-wrapper .btn-save {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.admin-create-wrapper .input-wrapper .btn-save-wrapper .btn-save:hover {
+  cursor: pointer;
+}
