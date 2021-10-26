@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
@@ -7,11 +7,12 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import axios from "axios";
 
-export default function ReadPost({ open, setOpen, data, type }) {
+export default function CardModal({ open, setOpen, data, type }) {
   const { id, title, body } = data;
   const [isLoading, setIsLoading] = useState(false);
   const [editTitle, setTitle] = useState("");
   const [editBody, setBody] = useState("");
+  const [postComments, setPostComments] = useState([]);
 
   const handleDelete = async () => {
     try {
@@ -81,6 +82,26 @@ export default function ReadPost({ open, setOpen, data, type }) {
     }
   };
 
+  useEffect(() => {
+    const getComments = async () => {
+      try {
+        setIsLoading(true);
+        let response = await axios.get(
+          `https://jsonplaceholder.typicode.com/posts/${id}/comments`
+        );
+        setPostComments(response.data);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    getComments();
+    return () => {
+      setPostComments([]);
+    };
+  }, [id]);
+
   return (
     <div>
       <Dialog open={open} onClose={() => setOpen(false)}>
@@ -105,6 +126,23 @@ export default function ReadPost({ open, setOpen, data, type }) {
               >
                 {body}
               </DialogContentText>
+              <div className="comments-wrapper">
+                <div className="comments-header">Comments</div>
+                <div className="comments-items-wrapper">
+                  {isLoading ? (
+                    <div className="loading-comments">Loading comments.. </div>
+                  ) : (
+                    <>
+                      {postComments.map((e) => (
+                        <div className="comment-item">
+                          <div className="comment-item-name">{e.email}</div>
+                          <div className="comment-item-body">{e.body}</div>
+                        </div>
+                      ))}
+                    </>
+                  )}
+                </div>
+              </div>
             </DialogContent>
             <DialogActions sx={{ paddingRight: "3rem" }}>
               <Button

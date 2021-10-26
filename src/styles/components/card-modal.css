@@ -1,0 +1,39 @@
+.comments-wrapper {
+  margin: 2rem 0 0 0;
+}
+
+.comments-wrapper .comments-header {
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-top: 2px solid black;
+  font-weight: bold;
+  background-color: #ececec;
+  width: 20rem;
+}
+
+.comments-wrapper .comments-items-wrapper {
+  margin: 0.7rem 0 0 0;
+  width: 98%;
+  border: 1px solid gray;
+}
+
+.comments-wrapper .comments-items-wrapper .loading-comments {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.comments-wrapper .comments-items-wrapper .comment-item {
+  padding: 1rem 1.3rem;
+}
+
+.comments-wrapper .comments-items-wrapper .comment-item .comment-item-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.comments-wrapper .comments-items-wrapper .comment-item .comment-item-body {
+  font-size: 1.3rem;
+  padding: 0 0 0 0.8rem;
+  font-weight: bold;
+  color: #bdb8b8;
+}
