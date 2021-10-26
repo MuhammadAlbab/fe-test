@@ -8,8 +8,12 @@ const LikedPosts = () => {
   const dispatch = useDispatch();
   const likedPosts = useSelector((state) => state.LikedPosts);
   useEffect(() => {
-    const likedFromLS = localStorage.getItem("likedPosts");
-    dispatch(getLikedPosts(JSON.parse(likedFromLS)));
+    if (localStorage.getItem("likedPosts") === null) {
+      return;
+    } else {
+      const likedFromLS = localStorage.getItem("likedPosts");
+      dispatch(getLikedPosts(JSON.parse(likedFromLS)));
+    }
   }, [dispatch]);
   return (
     <>
