@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
@@ -9,6 +9,12 @@ const AdminCreate = () => {
   const [theBody, setBody] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const currentUser = useSelector((state) => state.Account.currentUser);
+
+  useEffect(() => {
+    if (localStorage.getItem("currentUser") === null) {
+      history.push("/login");
+    }
+  }, [history]);
 
   const handleSave = async () => {
     try {
