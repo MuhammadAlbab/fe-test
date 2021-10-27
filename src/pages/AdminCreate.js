@@ -17,27 +17,31 @@ const AdminCreate = () => {
   }, [history]);
 
   const handleSave = async () => {
-    try {
-      setIsLoading(true);
-      const data = {
-        title: theTitle,
-        body: theBody,
-        userId: currentUser.id,
-      };
-      let response = await axios.post(
-        `https://jsonplaceholder.typicode.com/posts`,
-        data
-      );
-      alert(
-        `${response.data.title} Berhasil ditambahkan, silahkan lihat response di log atau console.log()`
-      );
-      console.log(response);
-      history.push("/admin");
-    } catch (error) {
-      console.log(error);
-      alert("Terjadi kesalahan");
-    } finally {
-      setIsLoading(false);
+    if (theTitle === "" || theBody === "") {
+      alert("Title or Body can't be empty!");
+    } else {
+      try {
+        setIsLoading(true);
+        const data = {
+          title: theTitle,
+          body: theBody,
+          userId: currentUser.id,
+        };
+        let response = await axios.post(
+          `https://jsonplaceholder.typicode.com/posts`,
+          data
+        );
+        alert(
+          `${response.data.title} Berhasil ditambahkan, silahkan lihat response di log atau console.log()`
+        );
+        console.log(response);
+        history.push("/admin");
+      } catch (error) {
+        console.log(error);
+        alert("Terjadi kesalahan");
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
   return (
